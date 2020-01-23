@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package com.IMSever.protobuf;
+
+message Message {
+    string id = 1;
+    string name = 2;
+    string content = 3;
+    Timestamp time = 4;
+}
+
+message MessageFromServer {
+    string id = 1;
+    string content = 2;
+}
+
+service ChatOneToOneService {
+    rpc Chat (Message) returns (MessageFromServer);
+}
