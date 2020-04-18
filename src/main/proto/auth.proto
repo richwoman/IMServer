@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package com.IMServer.protobuf;
+
+message AuthMessage {
+    string id = 1;
+    string key = 2;
+}
+
+message AuthMessageFromServer {
+    string isSuccess = 1;
+}
+
+service AuthService {
+    rpc auth (AuthMessage) returns (AuthMessageFromServer);
+}

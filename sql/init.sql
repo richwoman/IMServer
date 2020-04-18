@@ -1,0 +1,16 @@
+CREATE DATABASE imserver;
+
+USE imserver;
+
+CREATE TABLE app (
+    id VARCHAR(10) PRIMARY KEY,
+    appName VARCHAR(50) NOT NULL,
+    status VARCHAR(50) NOT NULL,
+    expiredAt DATETIME NOT NULL,
+    createdAt DATETIME NOT NULL
+);
+
+CREATE TABLE appTest (
+	id VARCHAR(10) PRIMARY KEY,
+    appName VARCHAR(50) NOT NULL
+);
