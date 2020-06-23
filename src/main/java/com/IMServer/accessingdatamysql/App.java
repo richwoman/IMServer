@@ -1,22 +1,32 @@
 package com.IMServer.accessingdatamysql;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.Date;
 
-@Table(name = "appTest")
+@Table(name = "app")
 @Entity
 public class App {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String id;
 
-    private String appName;
+    private String appid;
 
-    public void setId(String id) {
-        this.id = id;
+    private String appkey;
+
+    private Date created_at;
+
+    public App(String _appid, String _appkey) {
+        appid = _appid;
+        appkey = _appkey;
+        created_at = new Date();
     }
 
-    public void setAppName(String appName) {
-        this.appName = appName;
+    public void setAppid(String _appid) {
+        appid = _appid;
+    }
+
+    public void setAppKey(String _appkey) {
+        appkey = _appkey;
     }
 }
